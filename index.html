@@ -1,175 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>EMS Result</title>
+<meta charset="UTF-8">
+<title>RGUHS Examination Result</title>
 
 <style>
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background:#8fb6c9;
-    margin:0;
+    background-color: #cfe8f5;
+    margin: 0;
 }
 
-/* HEADER */
-.header{
-    background:#2f7f9f;
-    color:white;
-    padding:18px 0;
-    position:relative;
-    text-align:center;
-    font-size:22px;
-    font-weight:500;
+.header {
+    background-color: #2f6fa7;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
 }
 
-.logo{
-    position:absolute;
-    left:20px;
-    top:8px;
-    height:50px;   /* Logo size 50px */
+.header img {
+    height: 60px;
+    margin-right: 15px;
 }
 
-/* LOGIN PAGE */
-.login-box{
-    width:40%;
-    margin:60px auto;
-    background:white;
-    padding:30px;
-    border-radius:5px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-    text-align:center;
+.header h1 {
+    font-size: 22px;
+    margin: 0;
 }
 
-input, select{
-    width:90%;
-    padding:10px;
-    margin:10px 0;
-    font-size:16px;
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
 }
 
-button{
-    padding:10px 30px;
-    background:#4CAF50;
-    color:white;
-    border:none;
-    border-radius:5px;
-    font-size:16px;
-    cursor:pointer;
+.center-box {
+    width: 40%;
+    margin: 50px auto;
+    background: #e8f3f9;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
 }
 
-/* RESULT PAGE */
-.container{
-    width:95%;
-    margin:20px auto;
-    background:white;
-    padding:20px;
-    border-radius:5px;
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-.result-title{
-    background:#4f81bd;
-    color:white;
-    padding:10px;
-    text-align:center;
-    font-size:20px;
-    margin-bottom:10px;
+button {
+    padding: 10px 25px;
+    background: #5cb85c;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
-.print-btn{
-    background:#2f7f9f;
-    color:white;
-    padding:8px 20px;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:14px;
+th, td {
+    border: 1px solid #999;
+    padding: 5px;
+    text-align: center;
 }
 
-th, td{
-    border:1px solid #ccc;
-    padding:6px;
-    text-align:center;
+th {
+    background: #5b84c4;
+    color: white;
 }
 
-th{
-    background:#4f81bd;
-    color:white;
+.section-title {
+    background: #5b84c4;
+    color: white;
+    padding: 8px;
+    margin-top: 15px;
 }
 
-.footer{
-    margin-top:20px;
-    font-size:13px;
+.print-btn {
+    text-align: center;
+    margin-top: 15px;
 }
 
-/* PRINT SETTINGS */
 @media print {
-    #loginPage, .print-btn {
-        display:none;
-    }
-
-    body{
-        background:white;
-    }
+    button { display: none; }
 }
 </style>
 
 <script>
-function showResult(){
-    var reg = document.getElementById("regno").value.trim().toUpperCase();
-
-    if(reg === "24M5707"){
-        document.getElementById("loginPage").style.display="none";
-        document.getElementById("resultPage").style.display="block";
-    } else{
-        alert("Invalid Registration Number");
-    }
-}
-
-function printResult(){
-    window.print();
+function showResult() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("result").style.display = "block";
 }
 </script>
-
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-    <img src= https://i.postimg.cc/mkwWGm39/Screenshot-2026-02-25-14-30-08-697-com-google-android-googlequicksearchbox-edit.jpgclass="logo">
-    Rajiv Gandhi University of Health Sciences
+    <!-- 🔴 REPLACE LOGO URL BELOW -->
+    <img src=https://i.postimg.cc/rsrNHN3T/Screenshot-2026-02-25-14-30-08-697-com-google-android-googlequicksearchbox-edit.jpg
+    <h1>Rajiv Gandhi University of Health Sciences</h1>
 </div>
 
 <!-- LOGIN PAGE -->
-<div id="loginPage" class="login-box">
+<div id="login" class="center-box">
     <h3>Examination Result</h3>
-    <input type="text" id="regno" placeholder="Registration Number">
-    <br>
+    <input type="text" placeholder="Registration Number">
     <select>
-        <option>PHASE - I MBBS (RS7)</option>
+        <option>PHASE I MBBS</option>
     </select>
-    <br>
     <button onclick="showResult()">View</button>
 </div>
 
 <!-- RESULT PAGE -->
-<div id="resultPage" class="container" style="display:none;">
+<div id="result" class="container" style="display:none;">
 
-<div class="result-title">Exam Result</div>
+<div class="section-title">Exam Result</div>
 
-<div style="text-align:right; margin-bottom:10px;">
-    <button onclick="printResult()" class="print-btn">Print</button>
-</div>
+<p><b>STATEMENT OF MARKS</b><br>
+PHASE I MBBS (RS7) EXAMINATION – JANUARY 2026</p>
 
 <p>
-<b>Student Name :</b> INCHARA S <br>
-<b>Mother's Name :</b> NALINI R <br>
-<b>Father's Name :</b> B N SHIVANANDA <br>
-<b>Register Number :</b> 24M5707
+<b>Student Name:</b> INCHARA S<br>
+<b>Register Number:</b> 24M2507<br>
+<b>Mother's Name:</b> NALINI R<br>
+<b>Father's Name:</b> B N SHIVANANDA
 </p>
 
 <table>
@@ -177,11 +141,11 @@ function printResult(){
 <th>Paper Code</th>
 <th>Paper Title</th>
 <th>TP1 Max</th>
-<th>Theory Paper1</th>
+<th>Theory Paper 1</th>
 <th>TP2 Max</th>
-<th>Theory Paper2</th>
+<th>Theory Paper 2</th>
 <th>TP3 Max</th>
-<th>Theory Paper3</th>
+<th>Theory Paper 3</th>
 <th>PPR Max</th>
 <th>Pract</th>
 <th>Pr.Viva Max</th>
@@ -196,17 +160,53 @@ function printResult(){
 </tr>
 
 <tr>
-<td>A01</td>
-<td>ANATOMY</td>
+<td>A01</td><td>ANATOMY</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td>-</td><td>-</td>
+<td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td>
 <td style="color:red;">FAIL</td>
 </tr>
 
 <tr>
-<td>A02</td>
-<td>PHYSIOLOGY</td>
+<td>A02</td><td>PHYSIOLOGY</td>
+<td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
 <td>-</td><td>-</td><td>-</td><td>-</td>
-<td>-</td><td>-</td><td
+<td>-</td><td>-</td>
+<td>-</td><td>-</td><td>-</td><td>-</td>
+<td style="color:red;">FAIL</td>
+</tr>
+
+<tr>
+<td>A03</td><td>BIOCHEMISTRY</td>
+<td>100</td><td>58</td>
+<td>100</td><td>57</td>
+<td>-</td><td>-</td>
+<td>80</td><td>70</td>
+<td>20</td><td>18</td>
+<td>300</td><td>203</td>
+<td>100</td><td>51</td>
+<td>100</td><td>68</td>
+<td style="color:green;">PASS</td>
+</tr>
+</table>
+
+<br>
+
+<p>
+<b>Maximum Marks:</b> 900<br>
+<b>Grand Total (in figures):</b> 203<br>
+<b>Result:</b> <span style="color:red;">FAIL</span><br>
+<b>College Code & Name:</b> M012 – THE OXFORD MEDICAL COLLEGE, HOSPITAL & RESEARCH CENTRE, BANGALORE<br>
+<b>Minimum To Pass:</b> 40% THEORY, 40% PRACTICAL, 50% AGGREGATE, 40% IA, 40% PIA<br>
+<b>Result Published Date:</b> 27/02/2026 03:30:36 PM
+</p>
+
+<div class="print-btn">
+<button onclick="window.print()">Print</button>
+</div>
+
+</div>
+
+</body>
+</html>
